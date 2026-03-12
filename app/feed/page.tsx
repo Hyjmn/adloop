@@ -270,30 +270,35 @@ export default function AdFeed() {
             </svg>
           </div>
         </div>
-
-        {/* Stories bar */}
-        <div style={{
-          overflowX: "auto", display: "flex", gap: "12px",
-          padding: "14px 16px", background: "#0A0A0A",
-          borderBottom: "1px solid #1a1a1a",
-        }}>
-          {["Nike", "Apple", "Tesla", "Gucci", "Spotify", "Airbnb", "RedBull", "Rolex"].map((b, i) => (
-            <div key={b} style={{ flexShrink: 0, textAlign: "center" }}>
-              <div style={{
-                width: 62, height: 62, borderRadius: "50%",
-                background: `linear-gradient(135deg, #FF3A00, #FFD700)`,
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: "18px", fontWeight: "800", color: "#fff",
-                border: "2px solid #333",
-              }}>
-                {b[0]}
-              </div>
-              <div style={{ color: "#888", fontSize: "11px", marginTop: "5px", maxWidth: "64px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                {b}
-              </div>
-            </div>
-          ))}
-        </div>
+    <div style={{
+  overflowX: "auto",
+  display: "flex",
+  flexDirection: "row",
+  gap: "12px",
+  padding: "14px 16px",
+  background: "#0A0A0A",
+  borderBottom: "1px solid #1a1a1a",
+  position: "sticky",
+  top: 56,
+  zIndex: 99,
+}}>
+  {ads.slice(0, 8).map((ad: any) => (
+  <div key={ad.id} style={{ flexShrink: 0, textAlign: "center" }}>
+    <div style={{
+      width: 62, height: 62, borderRadius: "50%",
+      background: `linear-gradient(135deg, ${ad.bg_color || '#FF3A00'}, ${ad.accent_color || '#FFD700'})`,
+      display: "flex", alignItems: "center", justifyContent: "center",
+      fontSize: "18px", fontWeight: "800", color: "#fff",
+      border: "2px solid #333",
+    }}>
+      {ad.brand ? ad.brand[0] : '?'}
+    </div>
+    <div style={{ color: "#888", fontSize: "11px", marginTop: "5px", maxWidth: "64px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+      {ad.brand}
+    </div>
+  </div>
+))}
+</div>
 
         {/* Feed */}
         <div style={{ maxWidth: "480px", margin: "0 auto" }}>
