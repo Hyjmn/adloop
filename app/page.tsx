@@ -71,7 +71,7 @@ function AdCard({ ad, index }: { ad: any, index: number }) {
             fontSize: "13px", fontWeight: "800", color: "#fff", letterSpacing: "-0.5px",
             flexShrink: 0,
           }}>
-            {ad.brand[0]}
+            {ad.brand ? ad.brand[0] : '?'}
           </div>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
