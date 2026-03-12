@@ -169,7 +169,7 @@ function AdCard({ ad, index }: { ad: any, index: number }) {
         </div>
 
         <div style={{ color: "#fff", fontSize: "14px", fontWeight: "700", marginBottom: "4px" }}>
-          {liked ? `${ad.likes.replace("K", "")} + 1 likes` : `${ad.likes} likes`}
+          {liked ? "1 like" : ""}
         </div>
         <div style={{ color: "#888", fontSize: "13px", marginBottom: "12px" }}>
           <span style={{ color: "#ccc", fontWeight: "600" }}>{ad.brand}</span>{" "}
